@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/tiago/CLionProjects/projeto/Dados.c" "/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Dados.c.o"
-  "/home/tiago/CLionProjects/projeto/Interface.c" "/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Interface.c.o"
-  "/home/tiago/CLionProjects/projeto/Logica.c" "/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Logica.c.o"
-  "/home/tiago/CLionProjects/projeto/main.c" "/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.c.o"
+  "/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Dados.c.o"
+  "/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Interface.c.o"
+  "/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Logica.c.o"
+  "/home/tiago/Projeto/LI2Pl5G3/projeto/main.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -43,10 +43,10 @@ RM = /snap/clion/103/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tiago/CLionProjects/projeto
+CMAKE_SOURCE_DIR = /home/tiago/Projeto/LI2Pl5G3/projeto
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tiago/CLionProjects/projeto/cmake-build-debug
+CMAKE_BINARY_DIR = /home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/projeto.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/projeto.dir/flags.make
 
 CMakeFiles/projeto.dir/main.c.o: CMakeFiles/projeto.dir/flags.make
 CMakeFiles/projeto.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/projeto.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/main.c.o   -c /home/tiago/CLionProjects/projeto/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/projeto.dir/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/main.c.o   -c /home/tiago/Projeto/LI2Pl5G3/projeto/main.c
 
 CMakeFiles/projeto.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/projeto.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/CLionProjects/projeto/main.c > CMakeFiles/projeto.dir/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/Projeto/LI2Pl5G3/projeto/main.c > CMakeFiles/projeto.dir/main.c.i
 
 CMakeFiles/projeto.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/projeto.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/CLionProjects/projeto/main.c -o CMakeFiles/projeto.dir/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/Projeto/LI2Pl5G3/projeto/main.c -o CMakeFiles/projeto.dir/main.c.s
 
 CMakeFiles/projeto.dir/Interface.c.o: CMakeFiles/projeto.dir/flags.make
 CMakeFiles/projeto.dir/Interface.c.o: ../Interface.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/projeto.dir/Interface.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Interface.c.o   -c /home/tiago/CLionProjects/projeto/Interface.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/projeto.dir/Interface.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Interface.c.o   -c /home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c
 
 CMakeFiles/projeto.dir/Interface.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/projeto.dir/Interface.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/CLionProjects/projeto/Interface.c > CMakeFiles/projeto.dir/Interface.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c > CMakeFiles/projeto.dir/Interface.c.i
 
 CMakeFiles/projeto.dir/Interface.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/projeto.dir/Interface.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/CLionProjects/projeto/Interface.c -o CMakeFiles/projeto.dir/Interface.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c -o CMakeFiles/projeto.dir/Interface.c.s
 
 CMakeFiles/projeto.dir/Logica.c.o: CMakeFiles/projeto.dir/flags.make
 CMakeFiles/projeto.dir/Logica.c.o: ../Logica.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/projeto.dir/Logica.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Logica.c.o   -c /home/tiago/CLionProjects/projeto/Logica.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/projeto.dir/Logica.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Logica.c.o   -c /home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c
 
 CMakeFiles/projeto.dir/Logica.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/projeto.dir/Logica.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/CLionProjects/projeto/Logica.c > CMakeFiles/projeto.dir/Logica.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c > CMakeFiles/projeto.dir/Logica.c.i
 
 CMakeFiles/projeto.dir/Logica.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/projeto.dir/Logica.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/CLionProjects/projeto/Logica.c -o CMakeFiles/projeto.dir/Logica.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c -o CMakeFiles/projeto.dir/Logica.c.s
 
 CMakeFiles/projeto.dir/Dados.c.o: CMakeFiles/projeto.dir/flags.make
 CMakeFiles/projeto.dir/Dados.c.o: ../Dados.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/projeto.dir/Dados.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Dados.c.o   -c /home/tiago/CLionProjects/projeto/Dados.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/projeto.dir/Dados.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/projeto.dir/Dados.c.o   -c /home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c
 
 CMakeFiles/projeto.dir/Dados.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/projeto.dir/Dados.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/CLionProjects/projeto/Dados.c > CMakeFiles/projeto.dir/Dados.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c > CMakeFiles/projeto.dir/Dados.c.i
 
 CMakeFiles/projeto.dir/Dados.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/projeto.dir/Dados.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/CLionProjects/projeto/Dados.c -o CMakeFiles/projeto.dir/Dados.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c -o CMakeFiles/projeto.dir/Dados.c.s
 
 # Object files for target projeto
 projeto_OBJECTS = \
@@ -125,7 +125,7 @@ projeto: CMakeFiles/projeto.dir/Logica.c.o
 projeto: CMakeFiles/projeto.dir/Dados.c.o
 projeto: CMakeFiles/projeto.dir/build.make
 projeto: CMakeFiles/projeto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable projeto"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable projeto"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/projeto.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/projeto.dir/clean:
 .PHONY : CMakeFiles/projeto.dir/clean
 
 CMakeFiles/projeto.dir/depend:
-	cd /home/tiago/CLionProjects/projeto/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiago/CLionProjects/projeto /home/tiago/CLionProjects/projeto /home/tiago/CLionProjects/projeto/cmake-build-debug /home/tiago/CLionProjects/projeto/cmake-build-debug /home/tiago/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tiago/Projeto/LI2Pl5G3/projeto /home/tiago/Projeto/LI2Pl5G3/projeto /home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug /home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug /home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/projeto.dir/depend
 
