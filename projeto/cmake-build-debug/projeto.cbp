@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/tiago/CLionProjects/projeto/cmake-build-debug"/>
+				<Option working_dir="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/tiago/CLionProjects/projeto/cmake-build-debug"/>
+				<Option working_dir="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="projeto">
-				<Option output="/home/tiago/CLionProjects/projeto/cmake-build-debug/projeto" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tiago/CLionProjects/projeto/cmake-build-debug"/>
+				<Option output="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/projeto" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -41,15 +41,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="projeto/fast">
-				<Option output="/home/tiago/CLionProjects/projeto/cmake-build-debug/projeto" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/tiago/CLionProjects/projeto/cmake-build-debug"/>
+				<Option output="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/projeto" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -61,45 +61,45 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 projeto/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/tiago/CLionProjects/projeto/cmake-build-debug"/>
+				<Option working_dir="/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/CLionProjects/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Dados.c">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Dados.h">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Interface.c">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Interface.h">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Logica.c">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/Logica.h">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.h">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/main.c">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/main.c">
 			<Option target="projeto"/>
 		</Unit>
-		<Unit filename="/home/tiago/CLionProjects/projeto/CMakeLists.txt">
+		<Unit filename="/home/tiago/Projeto/LI2Pl5G3/projeto/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
