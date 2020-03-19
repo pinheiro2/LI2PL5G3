@@ -1,6 +1,7 @@
 #ifndef PROJETO_DADOS_H
 #define PROJETO_DADOS_H
 
+
 typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
 
 typedef struct {
@@ -22,5 +23,21 @@ typedef struct {
     int num_jogadas;
     int jogador_atual;
 } ESTADO;
+
+/**
+\brief Muda o valor de uma casa
+@param e Apontador para o estado
+@param c A coordenada
+@param V O novo valor para a casa
+*/
+void set_casa(ESTADO *e, COORDENADA c, CASA V);
+
+/**
+\brief Devolve o valor de uma casa
+@param e Apontador para o estado
+@param c A coordenada
+@returns O valor da casa
+*/
+CASA get_casa(ESTADO *e, COORDENADA c);
 
 #endif //PROJETO_DADOS_H
