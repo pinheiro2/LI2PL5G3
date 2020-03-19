@@ -1,6 +1,15 @@
 #include "Dados.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include "Logica.h"
+
+ int check_proximidade (ESTADO *e, COORDENADA c) {
+    COORDENADA a = e -> ultima_jogada;
+    if ((abs(a.linha - c.linha)) <= 1 && (abs(a.coluna - c.coluna)) <= 1)
+        return 1;
+    else
+        return 0;
+}
 
  int check_tabuleiro (COORDENADA c) {
     if (c.linha >= 1 && c.linha <= 8 && c.coluna >= 1 && c.coluna <= 8)
