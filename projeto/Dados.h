@@ -1,7 +1,7 @@
 #ifndef PROJETO_DADOS_H
 #define PROJETO_DADOS_H
 
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
+typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
 
 typedef struct {
     int coluna;
