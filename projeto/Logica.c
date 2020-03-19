@@ -11,6 +11,7 @@ int check_tabuleiro (COORDENADA c) {
 }
 
 int check_proximidade (ESTADO *e, COORDENADA c) {
+
     COORDENADA a = e -> ultima_jogada;
     if ((abs(a.linha - c.linha)) <= 1 && (abs(a.coluna - c.coluna)) <= 1)
         return 1;
@@ -37,6 +38,7 @@ int jogada_valida (ESTADO *e, COORDENADA c) {
 }
 
 int jogar(ESTADO *e, COORDENADA c) {
+
     printf("jogar %d %d\n", c.coluna, c.linha);
     set_casa (e, e -> ultima_jogada, PRETA);
     set_casa (e, c, BRANCA);
@@ -56,3 +58,4 @@ int jogar(ESTADO *e, COORDENADA c) {
 
     return 1;
 }
+
