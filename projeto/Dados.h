@@ -2,7 +2,12 @@
 #define PROJETO_DADOS_H
 
 
-typedef enum {VAZIO, BRANCA, PRETA, UM, DOIS} CASA;
+typedef enum {VAZIO = '.',
+              BRANCA = '*',
+              PRETA = '#',
+              UM = '1',
+              DOIS = '2'
+        } CASA;
 
 typedef struct {
     int coluna;
