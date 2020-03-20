@@ -17,8 +17,12 @@ ESTADO *inicializar_estado() {
     e -> num_jogadas = 0;
     for (int i = 0; i < 8; i++)
         for (int j = 0; j < 8; j++)
-            e -> tab [i] [j] = VAZIO;
-    e -> tab [4] [4] = BRANCA;
+
+            set_casa(e, {j,i}, VAZIO);
+    set_casa(e, {5,5}, BRANCA);
+    set_casa(e,{1,1},UM);
+    set_casa(e, {8,8}, DOIS);
+
     e -> ultima_jogada.linha = 5;
     e -> ultima_jogada.coluna = 5;
     return e;

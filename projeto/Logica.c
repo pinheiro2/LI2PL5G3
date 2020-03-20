@@ -58,4 +58,3 @@ int jogar(ESTADO *e, COORDENADA c) {
 
     return 1;
 }
-
