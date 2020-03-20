@@ -46,5 +46,8 @@ void set_casa(ESTADO *e, COORDENADA c, CASA V);
 CASA get_casa(ESTADO *e, COORDENADA c);
 
 ESTADO *inicializar_estado();
+void troca_jogador (ESTADO *e);
+int get_jogador (ESTADO *e);
+int get_num_jogadas (ESTADO *e);
 
 #endif //PROJETO_DADOS_H

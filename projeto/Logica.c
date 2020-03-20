@@ -37,6 +37,7 @@ int jogada_valida (ESTADO *e, COORDENADA c) {
     return 0;
 }
 
+
 int jogar(ESTADO *e, COORDENADA c) {
 
     printf("jogar %d %d\n", c.coluna, c.linha);
@@ -44,17 +45,12 @@ int jogar(ESTADO *e, COORDENADA c) {
     set_casa (e, c, BRANCA);
     e-> ultima_jogada = c;
 
-
-    if (e -> jogador_atual == 1) {
-        e -> jogador_atual = 2;
-        e -> jogadas [e -> num_jogadas].jogador1 = c;
-
-    }
-    else {
-        e -> jogador_atual = 1;
-        e -> jogadas [e -> num_jogadas].jogador2 = c;
+    if (get_jogador(e) == 1) {
         e -> num_jogadas++;
+        e -> jogadas [(e -> num_jogadas) - 1].jogador1 = c;
     }
-
+    else
+        e -> jogadas [(e -> num_jogadas) - 1].jogador2 = c;
+    troca_jogador(e);
     return 1;
 }
