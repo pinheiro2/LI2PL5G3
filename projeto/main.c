@@ -1,6 +1,10 @@
+#include "Dados.h"
+#include "Interface.h"
+#include "Logica.h"
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+    ESTADO *e = inicializar_estado();
+    interpretador(e);
     return 0;
 }
