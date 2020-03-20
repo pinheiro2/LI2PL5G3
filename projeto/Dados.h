@@ -21,12 +21,23 @@ typedef struct {
 
 typedef JOGADA JOGADAS[32];
 
+/**
+\brief Tipo de dados para o estado
+*/
+
 typedef struct {
+    /** O tabuleiro */
     CASA tab[8][8];
-    COORDENADA ultima_jogada;
+    /** As jogadas */
     JOGADAS jogadas;
+    /** O número das jogadas, usado no prompt */
     int num_jogadas;
+    /** O jogador atual */
     int jogador_atual;
+    /** O nº de comando, usado no prompt */
+    int num_comando;
+    /** A coordenada da última jogada */
+    COORDENADA ultima_jogada;
 } ESTADO;
 
 /**
@@ -49,5 +60,6 @@ ESTADO *inicializar_estado();
 void troca_jogador (ESTADO *e);
 int get_jogador (ESTADO *e);
 int get_num_jogadas (ESTADO *e);
+int get_num_comando (ESTADO *e);
 
 #endif //PROJETO_DADOS_H
