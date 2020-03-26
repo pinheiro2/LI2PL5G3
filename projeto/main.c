@@ -5,6 +5,8 @@
 
 int main() {
     ESTADO *e = inicializar_estado();
-    interpretador(e);
+    int quit = 0;
+    while (quit = 0)
+        interpretador(e, &quit);
     return 0;
 }

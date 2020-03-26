@@ -36,43 +36,40 @@ int jogada_valida (ESTADO *e, COORDENADA c) {
                 return 1;
     return 0;
 }
-    int ganha_casa (ESTADO *e, COORDENADA c) {
-        int r = 0;
-        if (get_casa (e, c) == UM)
-            r = 1;
-        if (get_casa (e, c) == DOIS)
-            r = 2;
-        return r;
-    }
 
-    int ganha_invalido (ESTADO *e, COORDENADA c) {
-        int i,j;
-        int r = 0;
-        int p = get_jogador(e);
-        for (i = -1; i < 2; i++)
-            for (j = -1; j < 2; j++){
-                CASA h = get_casa(e, {(c.coluna + i), (c.linha + j)});
-                if (h == VAZIO || h == UM ||  h == DOIS){
-                    r = 0;
-                    break;
-                }
-                else
+int ganha_casa (ESTADO *e, COORDENADA c) {
+    int r = 0;
+    if (get_casa (e, c) == UM)
+        r = 1;
+    if (get_casa (e, c) == DOIS)
+        r = 2;
+    return r;
+}
+
+int ganha_invalido (ESTADO *e, COORDENADA c) {
+    int i, j;
+    int r = 0;
+    int p = get_jogador(e);
+    for (i = -1; i < 2; i++)
+        for (j = -1; j < 2; j++) {
+            CASA h = get_casa(e,coord(c.coluna + i, c.linha + j));
+            if (h == VAZIO || h == UM || h == DOIS) {
+                r = 0;
+                break;
+            } else
                 r = p;
-                return r;
-            }
-
-
-        int vencedor (ESTADO *e, COORDENADA c){
-            int v;
-            if (ganha_casa (e, c) != 0)
-                v = ganha_casa(e, c);
-            else
-                v = ganha_invalido (e, c);
-            return v;
+            return r;
         }
 }
 
-
+int vencedor (ESTADO *e, COORDENADA c){
+    int v;
+    if (ganha_casa (e, c) != 0)
+        v = ganha_casa(e, c);
+    else
+        v = ganha_invalido (e, c);
+    return v;
+}
 
 int jogar(ESTADO *e, COORDENADA c) {
 

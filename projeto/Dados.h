@@ -41,6 +41,14 @@ typedef struct {
 } ESTADO;
 
 /**
+\brief Devolve o valor de uma coordenada
+@param col O inteiro correspondente à coluna
+@param lin O inteiro correspondente à linha
+@returns A coordenada
+*/
+COORDENADA coord(int col, int lin);
+
+/**
 \brief Muda o valor de uma casa
 @param e Apontador para o estado
 @param c A coordenada
