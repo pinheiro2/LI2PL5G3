@@ -16,7 +16,7 @@ void mostrar_tabuleiro(ESTADO *estado) {
     for (int i = 1; i <= 3; i++)
         putchar(' ');
     for (int i = 1; i <= 8; i++)
-        printf("%c ", 96 + i);
+        printf("%c", 96 + i);
     putchar('\n');
 }
 
