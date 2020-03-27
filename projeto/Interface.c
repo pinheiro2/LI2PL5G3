@@ -10,7 +10,7 @@ void mostrar_tabuleiro(ESTADO *estado) {
     for (int i = 8; i >= 1; i--) {
         printf("%d  ", i);
         for (int j = 1; j <= 8; j++)
-            printf("%c ",get_casa(estado, coord(j, i)));
+            printf("%c",get_casa(estado, coord(j, i)));
         putchar('\n');
     }
     for (int i = 1; i <= 3; i++)
@@ -74,7 +74,7 @@ int interpretador(ESTADO *e, int *quit) {
             mostrar_tabuleiro(e);
         }
         else
-            printf("Jogada Inválida");
+            printf("Jogada Inválida\n");
     }
     if (sscanf(linha, "Q") == 1)
         *quit = 1;

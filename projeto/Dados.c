@@ -47,8 +47,8 @@ ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
     e -> jogador_atual = 1;
     e -> num_jogadas = 0;
-    for (int i = 0; i < 8; i++)
-        for (int j = 0; j < 8; j++)
+    for (int i = 1; i <= 8; i++)
+        for (int j = 1; j <= 8; j++)
             set_casa(e, coord(j,i), VAZIO);
     set_casa(e, coord(5, 5), BRANCA);
     set_casa(e,coord(1, 1),UM);
