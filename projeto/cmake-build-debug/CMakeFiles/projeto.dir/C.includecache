@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.h
+
+/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c
+Interface.h
+/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.h
+Dados.h
+/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.h
+Logica.h
+/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.h
+stdio.h
+-
+string.h
+-
+
+/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.h
+Dados.h
+/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.h
+
+/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.h
+
