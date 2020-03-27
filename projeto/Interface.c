@@ -22,7 +22,7 @@ void mostrar_tabuleiro(ESTADO *estado) {
 
 void gr_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
-    fp = fopen("c:\test.txt", "w");
+    fp = fopen(nome, "w");
     for (int i = 8; i >= 1; i--) {
         fprintf(fp, "%d  ", i);
         for (int j = 1; j <= 8; j++)
@@ -40,7 +40,7 @@ void gr_ficheiro(ESTADO *e, char *nome) {
 void ler_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
     int c;
-    fp = fopen("c:\test.txt", "r");
+    fp = fopen(nome, "r");
     while(1) {
         c = fgetc(fp);
         if (feof(fp))
