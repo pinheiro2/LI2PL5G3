@@ -52,14 +52,15 @@ int ganha_invalido (ESTADO *e, COORDENADA c) {
     int p = get_jogador(e);
     for (i = -1; i < 2; i++)
         for (j = -1; j < 2; j++) {
-            CASA h = get_casa(e,coord(c.coluna + i, c.linha + j));
-            if (h == VAZIO || h == UM || h == DOIS) {
-                r = 0;
-                break;
-            } else
-                r = p;
-            return r;
+            if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + i > 0 && c.coluna + i < 9) {
+                CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
+                if (h == VAZIO || h == UM || h == DOIS) {
+                    return 0;
+                } else
+                    r = p;
+            }
         }
+    return r;
 }
 
 int vencedor (ESTADO *e, COORDENADA c){
@@ -72,18 +73,23 @@ int vencedor (ESTADO *e, COORDENADA c){
 }
 
 int jogar(ESTADO *e, COORDENADA c) {
+    int r = 0;
+    if (jogada_valida(e, c)) {
+        r = vencedor(e,c);
+        set_casa(e, e->ultima_jogada, PRETA);
+        set_casa(e, c, BRANCA);
+        e->ultima_jogada = c;
 
-    printf("jogar %d %d\n", c.coluna, c.linha);
-    set_casa (e, e -> ultima_jogada, PRETA);
-    set_casa (e, c, BRANCA);
-    e-> ultima_jogada = c;
-
-    if (get_jogador(e) == 1) {
-        e -> num_jogadas++;
-        e -> jogadas [(e -> num_jogadas) - 1].jogador1 = c;
+        if (get_jogador(e) == 1) {
+            e->num_jogadas++;
+            e->jogadas[(e->num_jogadas) - 1].jogador1 = c;
+        } else
+            e->jogadas[(e->num_jogadas) - 1].jogador2 = c;
+        if (r == 0)
+            r = vencedor(e, c);
+        troca_jogador(e);
     }
     else
-        e -> jogadas [(e -> num_jogadas) - 1].jogador2 = c;
-    troca_jogador(e);
-    return 1;
+        r = 3;
+    return r;
 }

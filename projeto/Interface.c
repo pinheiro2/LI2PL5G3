@@ -58,6 +58,7 @@ void prompt(ESTADO *e) {
 }
 
 int interpretador(ESTADO *e, int *quit) {
+    int cont;
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char nomef[15];
@@ -69,12 +70,16 @@ int interpretador(ESTADO *e, int *quit) {
         return 0;
     if(strlen(linha) == 3 && sscanf(linha, "%c%[0-9]", col, lin) == 2) {
         COORDENADA coord = {*col - 96, *lin - 48};
-        if (jogada_valida(e,coord)) {
-            jogar(e, coord);
+        cont = jogar(e, coord);
+        if (cont == 3)
+            printf ("Jogada Inválida\n");
+        if (cont == 2)
+            printf ("Parabens jogador 2\n");
+        if (cont == 1)
+            printf ("Parabens jogador 1\n");
+        if (cont == 0)
             mostrar_tabuleiro(e);
-        }
-        else
-            printf("Jogada Inválida\n");
+
     }
     if (sscanf(linha, "Q") == 1)
         *quit = 1;
@@ -84,7 +89,6 @@ int interpretador(ESTADO *e, int *quit) {
 
     if (sscanf(linha, "gr %s", nomef) == strlen(nomef))
         gr_ficheiro(e, nomef);
-
     e-> num_comando++;
     prompt(e);
     return 1;
