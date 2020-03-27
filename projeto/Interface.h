@@ -6,6 +6,5 @@
 void mostrar_tabuleiro(ESTADO *estado);
 void gr_ficheiro(ESTADO *e, char *nome);
 void ler_ficheiro(ESTADO *e, char *nome);
-int interpretador(ESTADO *e, int *quit);
-
+void mostrar_movs (ESTADO *e);
 #endif //PROJETO_INTERFACE_H

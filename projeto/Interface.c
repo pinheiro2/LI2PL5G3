@@ -55,6 +55,25 @@ void prompt(ESTADO *e) {
         printf("# 0%d PL%d (%d)>", get_num_comando(e), get_jogador(e),get_num_jogadas(e));
     else
         printf("# %d PL%d (%d)>", get_num_comando(e), get_jogador(e),get_num_jogadas(e));
+
+}
+
+void mostrar_movs (ESTADO *e){
+    JOGADAS j = get_jogadas (e);
+    int n = get_num_jogadas, i=0;
+    int c1,l1,c2,l2;
+    for (i = 0; i < n; i++){
+        if (i < 9)
+            printf("0%d: ", i+1);
+        else
+            printf("%d: ", i+1);
+        c1 = j[i].jogador1.coluna + 96;
+        c2 = j[i].jogador2.coluna + 96;
+        l1 = j[i].jogador1.linha;
+        l2 = j[i].jogador2.linha;
+        printf ("%c%d %c%d\n",c1,l1,c2,l2 );
+
+    }
 }
 
 int interpretador(ESTADO *e, int *quit) {

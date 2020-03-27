@@ -69,5 +69,6 @@ void troca_jogador (ESTADO *e);
 int get_jogador (ESTADO *e);
 int get_num_jogadas (ESTADO *e);
 int get_num_comando (ESTADO *e);
+JOGADAS get_jogadas (ESTADO *e);
 
 #endif //PROJETO_DADOS_H

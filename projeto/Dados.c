@@ -43,6 +43,12 @@ int get_num_comando (ESTADO *e) {
     return r;
 }
 
+JOGADAS get_jogadas (ESTADO *e){
+    JOGADAS  r;
+    r = e->jogadas;
+    return r;
+}
+
 ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
     e -> jogador_atual = 1;
