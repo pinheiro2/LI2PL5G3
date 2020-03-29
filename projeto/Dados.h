@@ -64,11 +64,12 @@ void set_casa(ESTADO *e, COORDENADA c, CASA V);
 */
 CASA get_casa(ESTADO *e, COORDENADA c);
 
-ESTADO *inicializar_estado();
 void troca_jogador (ESTADO *e);
 int get_jogador (ESTADO *e);
 int get_num_jogadas (ESTADO *e);
 int get_num_comando (ESTADO *e);
-JOGADAS get_jogadas (ESTADO *e);
+COORDENADA str_to_coord(char *s);
+void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
+ESTADO *inicializar_estado();
 
 #endif //PROJETO_DADOS_H

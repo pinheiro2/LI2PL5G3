@@ -43,14 +43,32 @@ int get_num_comando (ESTADO *e) {
     return r;
 }
 
-JOGADAS get_jogadas (ESTADO *e){
-    JOGADAS  r;
-    r = e->jogadas;
-    return r;
+COORDENADA str_to_coord(char *s) {
+    int col,lin;
+    COORDENADA c;
+    col = s[0] - 96;
+    lin = s[1] - 48;
+    c.coluna = col;
+    c.linha = lin;
+    return c;
+}
+
+void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog) {
+    if (j.jogador2.linha == -1) {
+        e->ultima_jogada = j.jogador1;
+        e->jogador_atual = 2;
+        set_casa(e, j.jogador1, BRANCA);
+    }
+    else {
+    e -> jogadas[num_jog - 1] = j;
+    set_casa(e, j.jogador1, PRETA);
+    set_casa(e, j.jogador2, PRETA);
+
+    }
 }
 
 ESTADO *inicializar_estado() {
-    ESTADO *e = (ESTADO *) malloc(sizeof(ESTADO));
+    ESTADO *e = (ESTADO *) calloc(1,sizeof(ESTADO));
     e -> jogador_atual = 1;
     e -> num_jogadas = 0;
     for (int i = 1; i <= 8; i++)

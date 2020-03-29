@@ -23,56 +23,95 @@ void mostrar_tabuleiro(ESTADO *estado) {
 void gr_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
     fp = fopen(nome, "w");
-    for (int i = 8; i >= 1; i--) {
-        fprintf(fp, "%d  ", i);
+    int i;
+    for (i = 8; i >= 1; i--) {
         for (int j = 1; j <= 8; j++)
-            fprintf(fp, "%c ", get_casa(e, coord(j, i)));
+            fprintf(fp, "%c", get_casa(e, coord(j, i)));
         fputc('\n', fp);
     }
-    for (int i = 1; i <= 3; i++)
-        fputc(' ', fp);
-    for (int i = 1; i <= 8; i++)
-        fprintf(fp, "%c ", 96 + i);
     fputc('\n', fp);
+    int n = get_num_jogadas(e);
+    int c1,l1,c2,l2;
+    for (i = 0; i < n; i++){
+        if (i < 9)
+            fprintf(fp,"0%d: ", i+1);
+        else
+            fprintf(fp,"%d: ", i+1);
+        c1 = e->jogadas[i].jogador1.coluna + 96;
+        c2 = e->jogadas[i].jogador2.coluna + 96;
+        l1 = e->jogadas[i].jogador1.linha;
+        l2 = e->jogadas[i].jogador2.linha;
+        if (i == n - 1 && get_jogador(e) == 2)
+            fprintf (fp,"%c%d\n",c1,l1);
+        else
+            fprintf (fp,"%c%d %c%d\n",c1,l1,c2,l2 );
+    }
     fclose(fp);
 }
 
 void ler_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
+    e = inicializar_estado();
     int c;
+    int ciclo = 1;
+    int c_enter = 0;
+    int num_jog = 0;
     fp = fopen(nome, "r");
-    while(1) {
-        c = fgetc(fp);
-        if (feof(fp))
-            break ;
-        printf("%c", c);
+    while(ciclo) {
+        if (c_enter < 9) {
+            c = fgetc(fp);
+            if (c == '\n')
+                c_enter++;
+            printf("%c", c);
+        }
+        else {
+            char linha[BUF_SIZE];
+            while(fgets(linha, BUF_SIZE, stdin) != NULL){
+                char jog1[BUF_SIZE];
+                char jog2[BUF_SIZE];
+                int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
+                if(num_tokens == 3) {
+                    COORDENADA c1 = str_to_coord(jog1);
+                    COORDENADA c2 = str_to_coord(jog2);
+                    armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
+                } else {
+                    COORDENADA c1 = str_to_coord(jog1);
+                    COORDENADA c2 = {-1, -1};
+                    armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
+                    ciclo = 0;
+                }
+            }
+        }
     }
+    if (num_jog != 0)
+        set_casa(e, coord(5,5), PRETA);
     fclose(fp);
 }
+
 
 void prompt(ESTADO *e) {
     if (get_num_comando(e) < 10)
         printf("# 0%d PL%d (%d)>", get_num_comando(e), get_jogador(e),get_num_jogadas(e));
     else
         printf("# %d PL%d (%d)>", get_num_comando(e), get_jogador(e),get_num_jogadas(e));
-
 }
 
 void mostrar_movs (ESTADO *e){
-    JOGADAS j = get_jogadas (e);
-    int n = get_num_jogadas, i=0;
+    int n = get_num_jogadas(e);
     int c1,l1,c2,l2;
-    for (i = 0; i < n; i++){
+    for (int i = 0; i < n; i++){
         if (i < 9)
             printf("0%d: ", i+1);
         else
             printf("%d: ", i+1);
-        c1 = j[i].jogador1.coluna + 96;
-        c2 = j[i].jogador2.coluna + 96;
-        l1 = j[i].jogador1.linha;
-        l2 = j[i].jogador2.linha;
-        printf ("%c%d %c%d\n",c1,l1,c2,l2 );
-
+        c1 = e->jogadas[i].jogador1.coluna + 96;
+        c2 = e->jogadas[i].jogador2.coluna + 96;
+        l1 = e->jogadas[i].jogador1.linha;
+        l2 = e->jogadas[i].jogador2.linha;
+        if (i == n - 1 && get_jogador(e) == 2)
+            printf ("%c%d\n",c1,l1);
+        else
+            printf ("%c%d %c%d\n",c1,l1,c2,l2 );
     }
 }
 
@@ -81,6 +120,7 @@ int interpretador(ESTADO *e, int *quit) {
     char linha[BUF_SIZE];
     char col[2], lin[2];
     char nomef[15];
+    char comando [5];
     if (e-> num_comando == 1) {
         mostrar_tabuleiro(e);
         prompt(e);
@@ -92,23 +132,31 @@ int interpretador(ESTADO *e, int *quit) {
         cont = jogar(e, coord);
         if (cont == 3)
             printf ("Jogada Inválida\n");
-        if (cont == 2)
-            printf ("Parabens jogador 2\n");
-        if (cont == 1)
-            printf ("Parabens jogador 1\n");
+        if (cont == 2) {
+            printf("Parabens jogador 2\n");
+        }
+        if (cont == 1) {
+            printf("Parabens jogador 1\n");
+        }
         if (cont == 0)
             mostrar_tabuleiro(e);
-
     }
-    if (sscanf(linha, "Q") == 1)
-        *quit = 1;
-
-    if (sscanf(linha, "ler %s", nomef) == strlen(nomef))
-        ler_ficheiro(e, nomef);
-
-    if (sscanf(linha, "gr %s", nomef) == strlen(nomef))
-        gr_ficheiro(e, nomef);
+    else {
+        if (sscanf(linha, "%s", comando) == 1) {
+            if (strcmp(comando, "Q") == 0)
+                *quit = 1;
+            if (strcmp(comando, "movs") == 0)
+                mostrar_movs(e);
+        }
+        if (sscanf(linha, "%s %s", comando, nomef) == 2) {
+            if (strcmp(comando, "ler") == 0)
+                ler_ficheiro(e, nomef);
+            if (strcmp(comando, "gr") == 0)
+                gr_ficheiro(e, nomef);
+        }
+    }
     e-> num_comando++;
-    prompt(e);
+    if (*quit == 0)
+        prompt(e);
     return 1;
 }
