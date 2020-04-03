@@ -77,7 +77,6 @@ CASA get_casa(ESTADO *e, COORDENADA c);
 /**
 \brief Troca o jogador atual
 @param e Apontador para o estado
-@param c A coordenada
 */
 void troca_jogador (ESTADO *e);
 
@@ -115,10 +114,9 @@ COORDENADA str_to_coord(char *s);
 @param j Jogada
 @param num_jog Numero de jogadas
 */
+void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
 void set_jogador_atual (ESTADO *e, int player);
-
-void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
 /**
 \brief Cria o estado inicial do jogo
