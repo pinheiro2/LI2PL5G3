@@ -115,6 +115,9 @@ COORDENADA str_to_coord(char *s);
 @param j Jogada
 @param num_jog Numero de jogadas
 */
+
+void set_jogador_atual (ESTADO *e, int player);
+
 void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
 /**

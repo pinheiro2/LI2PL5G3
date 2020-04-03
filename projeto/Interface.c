@@ -53,38 +53,58 @@ void ler_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
     e = inicializar_estado();
     int c;
-    int ciclo = 1;
     int c_enter = 0;
+    int ncol = 1;
+    int nlin = 8;
     int num_jog = 0;
+    int num_pretas = 0;
     fp = fopen(nome, "r");
-    while(ciclo) {
-        if (c_enter < 9) {
-            c = fgetc(fp);
-            if (c == '\n')
-                c_enter++;
-            printf("%c", c);
+    while(c_enter < 9) {
+        c = fgetc(fp);
+        if (c == '*') {
+            set_casa(e, coord(ncol, nlin), BRANCA);
+            e->ultima_jogada = coord(ncol, nlin);
+        }
+        if (c == '#') {
+            set_casa(e, coord(ncol, nlin), PRETA);
+            num_pretas++;
+        }
+        if (c == '.')
+            set_casa(e, coord(ncol, nlin), VAZIO);
+        if (c == '1')
+            set_casa(e, coord(ncol, nlin), UM);
+        if (c == '2')
+            set_casa(e, coord(ncol, nlin), DOIS);
+        if (c == '\n') {
+            c_enter++;
+            ncol = 1;
+            nlin--;
+        } else
+            ncol++;
+        printf("%c", c);
+    }
+    fgetc(fp);
+    char linha[BUF_SIZE];
+    while(fgets(linha, BUF_SIZE, fp) != NULL){
+        char jog1[BUF_SIZE];
+        char jog2[BUF_SIZE];
+        int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
+        if(num_tokens == 3) {
+            COORDENADA c1 = str_to_coord(jog1);
+            COORDENADA c2 = str_to_coord(jog2);
+            armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
         }
         else {
-            char linha[BUF_SIZE];
-            while(fgets(linha, BUF_SIZE, stdin) != NULL){
-                char jog1[BUF_SIZE];
-                char jog2[BUF_SIZE];
-                int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
-                if(num_tokens == 3) {
-                    COORDENADA c1 = str_to_coord(jog1);
-                    COORDENADA c2 = str_to_coord(jog2);
-                    armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
-                } else {
-                    COORDENADA c1 = str_to_coord(jog1);
-                    COORDENADA c2 = {-1, -1};
-                    armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
-                    ciclo = 0;
-                }
-            }
+            COORDENADA c1 = str_to_coord(jog1);
+            COORDENADA c2 = {-1, -1};
+            armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
         }
     }
-    if (num_jog != 0)
-        set_casa(e, coord(5,5), PRETA);
+    if (num_pretas % 2 == 0)
+        set_jogador_atual(e, 1);
+    else
+        set_jogador_atual(e, 2);
+    e -> num_jogadas = num_jog;
     fclose(fp);
 }
 

@@ -53,18 +53,13 @@ COORDENADA str_to_coord(char *s) {
     return c;
 }
 
-void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog) {
-    if (j.jogador2.linha == -1) {
-        e->ultima_jogada = j.jogador1;
-        e->jogador_atual = 2;
-        set_casa(e, j.jogador1, BRANCA);
-    }
-    else {
-    e -> jogadas[num_jog - 1] = j;
-    set_casa(e, j.jogador1, PRETA);
-    set_casa(e, j.jogador2, PRETA);
+void set_jogador_atual (ESTADO *e, int player){
+    e ->jogador_atual = player;
+}
 
-    }
+void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog) {
+    e -> jogadas [num_jog - 1] = j;
+
 }
 
 ESTADO *inicializar_estado() {
