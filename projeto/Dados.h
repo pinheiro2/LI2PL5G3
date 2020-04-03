@@ -118,6 +118,7 @@ void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
 void set_jogador_atual (ESTADO *e, int player);
 
+void clean_estado(ESTADO *e);
 /**
 \brief Cria o estado inicial do jogo
  @returns Estado inicial do jogo

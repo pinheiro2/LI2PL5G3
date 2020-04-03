@@ -59,7 +59,20 @@ void set_jogador_atual (ESTADO *e, int player){
 
 void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog) {
     e -> jogadas [num_jog - 1] = j;
+}
 
+void clean_estado(ESTADO *e){
+    e -> jogador_atual = 1;
+    e -> num_jogadas = 0;
+    for (int i = 1; i <= 8; i++)
+        for (int j = 1; j <= 8; j++)
+            set_casa(e, coord(j,i), VAZIO);
+    set_casa(e, coord(5, 5), BRANCA);
+    set_casa(e,coord(1, 1),UM);
+    set_casa(e, coord(8, 8), DOIS);
+    e -> ultima_jogada.linha = 5;
+    e -> ultima_jogada.coluna = 5;
+    e -> num_comando = 1;
 }
 
 ESTADO *inicializar_estado() {

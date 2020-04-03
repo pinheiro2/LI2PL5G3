@@ -51,61 +51,65 @@ void gr_ficheiro(ESTADO *e, char *nome) {
 
 void ler_ficheiro(ESTADO *e, char *nome) {
     FILE *fp;
-    e = inicializar_estado();
-    int c;
-    int c_enter = 0;
-    int ncol = 1;
-    int nlin = 8;
-    int num_jog = 0;
-    int num_pretas = 0;
-    fp = fopen(nome, "r");
-    while(c_enter < 9) {
-        c = fgetc(fp);
-        if (c == '*') {
-            set_casa(e, coord(ncol, nlin), BRANCA);
-            e->ultima_jogada = coord(ncol, nlin);
+    if (fopen(nome, "r") != NULL) {
+        fp = fopen(nome, "r");
+        clean_estado(e);
+        int c;
+        int c_enter = 0;
+        int ncol = 1;
+        int nlin = 8;
+        int num_jog = 0;
+        int num_pretas = 0;
+
+        while (c_enter < 9) {
+            c = fgetc(fp);
+            if (c == '*') {
+                set_casa(e, coord(ncol, nlin), BRANCA);
+                e->ultima_jogada = coord(ncol, nlin);
+            }
+            if (c == '#') {
+                set_casa(e, coord(ncol, nlin), PRETA);
+                num_pretas++;
+            }
+            if (c == '.')
+                set_casa(e, coord(ncol, nlin), VAZIO);
+            if (c == '1')
+                set_casa(e, coord(ncol, nlin), UM);
+            if (c == '2')
+                set_casa(e, coord(ncol, nlin), DOIS);
+            if (c == '\n') {
+                c_enter++;
+                ncol = 1;
+                nlin--;
+            } else
+                ncol++;
         }
-        if (c == '#') {
-            set_casa(e, coord(ncol, nlin), PRETA);
-            num_pretas++;
+        fgetc(fp);
+        char linha[BUF_SIZE];
+        while (fgets(linha, BUF_SIZE, fp) != NULL) {
+            char jog1[BUF_SIZE];
+            char jog2[BUF_SIZE];
+            int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
+            if (num_tokens == 3) {
+                COORDENADA c1 = str_to_coord(jog1);
+                COORDENADA c2 = str_to_coord(jog2);
+                armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
+            } else {
+                COORDENADA c1 = str_to_coord(jog1);
+                COORDENADA c2 = {-1, -1};
+                armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
+            }
         }
-        if (c == '.')
-            set_casa(e, coord(ncol, nlin), VAZIO);
-        if (c == '1')
-            set_casa(e, coord(ncol, nlin), UM);
-        if (c == '2')
-            set_casa(e, coord(ncol, nlin), DOIS);
-        if (c == '\n') {
-            c_enter++;
-            ncol = 1;
-            nlin--;
-        } else
-            ncol++;
-        printf("%c", c);
+        if (num_pretas % 2 == 0)
+            set_jogador_atual(e, 1);
+        else
+            set_jogador_atual(e, 2);
+        e->num_jogadas = num_jog;
+        fclose(fp);
+        mostrar_tabuleiro(e);
     }
-    fgetc(fp);
-    char linha[BUF_SIZE];
-    while(fgets(linha, BUF_SIZE, fp) != NULL){
-        char jog1[BUF_SIZE];
-        char jog2[BUF_SIZE];
-        int num_tokens = sscanf(linha, "%d: %s %s", &num_jog, jog1, jog2);
-        if(num_tokens == 3) {
-            COORDENADA c1 = str_to_coord(jog1);
-            COORDENADA c2 = str_to_coord(jog2);
-            armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
-        }
-        else {
-            COORDENADA c1 = str_to_coord(jog1);
-            COORDENADA c2 = {-1, -1};
-            armazenar_jogada(e, (JOGADA) {c1, c2}, num_jog);
-        }
-    }
-    if (num_pretas % 2 == 0)
-        set_jogador_atual(e, 1);
     else
-        set_jogador_atual(e, 2);
-    e -> num_jogadas = num_jog;
-    fclose(fp);
+        printf("Não foi possível encontrar o ficheiro \n");
 }
 
 
@@ -140,7 +144,7 @@ void pos (ESTADO *e, int n){
     int i;
     int k = e->num_comando;
     if (n < get_num_jogadas(e)) {
-        e = inicializar_estado();
+        clean_estado(e);
         for (i = 0; i < n; i++){
             if (i != n-1){
                 set_casa(e,e->jogadas[i].jogador1, PRETA);
@@ -152,10 +156,10 @@ void pos (ESTADO *e, int n){
                 e->ultima_jogada = e->jogadas[i].jogador2;
             }
         }
-        set_jogador_atual (e,1);
         e->num_jogadas = n;
         e->num_comando = k;
-
+        if (n != 0)
+            set_casa(e, coord(5,5), PRETA);
     }
     else
         printf("Impossível executar pos %d", n);
@@ -181,9 +185,13 @@ int interpretador(ESTADO *e, int *quit) {
             printf ("Jogada Inválida\n");
         if (cont == 2) {
             printf("Parabens jogador 2\n");
+            mostrar_tabuleiro(e);
+            *quit = 1;
         }
         if (cont == 1) {
             printf("Parabens jogador 1\n");
+            mostrar_tabuleiro(e);
+            *quit = 1;
         }
         if (cont == 0)
             mostrar_tabuleiro(e);
@@ -200,6 +208,10 @@ int interpretador(ESTADO *e, int *quit) {
                 ler_ficheiro(e, nomef);
             if (strcmp(comando, "gr") == 0)
                 gr_ficheiro(e, nomef);
+            if (strcmp(comando, "pos") == 0) {
+                pos(e, *nomef - 48);
+                mostrar_tabuleiro(e);
+            }
         }
     }
     e-> num_comando++;
