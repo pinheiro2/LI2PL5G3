@@ -135,6 +135,33 @@ void mostrar_movs (ESTADO *e){
     }
 }
 
+
+void pos (ESTADO *e, int n){
+    int i;
+    int k = e->num_comando;
+    if (n < get_num_jogadas(e)) {
+        e = inicializar_estado();
+        for (i = 0; i < n; i++){
+            if (i != n-1){
+                set_casa(e,e->jogadas[i].jogador1, PRETA);
+                set_casa(e,e->jogadas[i].jogador2, PRETA);
+            }
+            else {
+                set_casa(e,e->jogadas[i].jogador1, PRETA);
+                set_casa(e,e->jogadas[i].jogador2, BRANCA);
+                e->ultima_jogada = e->jogadas[i].jogador2;
+            }
+        }
+        set_jogador_atual (e,1);
+        e->num_jogadas = n;
+        e->num_comando = k;
+
+    }
+    else
+        printf("Impossível executar pos %d", n);
+
+}
+
 int interpretador(ESTADO *e, int *quit) {
     int cont;
     char linha[BUF_SIZE];

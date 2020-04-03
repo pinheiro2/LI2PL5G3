@@ -35,6 +35,8 @@ void prompt(ESTADO *e);
 */
 void mostrar_movs (ESTADO *e);
 
+void pos (ESTADO *e, int n);
+
 
 int interpretador (ESTADO *e,int *quit);
 #endif //PROJETO_INTERFACE_H
