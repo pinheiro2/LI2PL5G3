@@ -35,8 +35,17 @@ void prompt(ESTADO *e);
 */
 void mostrar_movs (ESTADO *e);
 
+/**
+\brief Permite voltar n jogas atras
+@param c Apontador para o estado
+@param n Numero de jogadas a voltar atras
+*/
 void pos (ESTADO *e, int n);
 
-
+/**
+\brief Permite realizar todos as funçoes necessarias numa jogada
+@param c Apontador para o estado
+@param quit Numero que determina se o jogo acaba ou continua, se quit == 0 o jogo continua, caso contrario o jogo acaba
+*/
 int interpretador (ESTADO *e,int *quit);
 #endif //PROJETO_INTERFACE_H

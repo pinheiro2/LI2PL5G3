@@ -36,6 +36,7 @@ int check_casa (ESTADO *e, COORDENADA c);
 int jogada_valida(ESTADO *e, COORDENADA c)
 */
 int jogada_valida (ESTADO *e, COORDENADA c);
+
 /**
 \brief Realiza a jogada
 @param c Apontador para o estado
@@ -44,6 +45,7 @@ int jogada_valida (ESTADO *e, COORDENADA c);
 int jogar(ESTADO *e, COORDENADA c)
 */
 int jogar(ESTADO *e, COORDENADA c);
+
 /**
 \brief Devolve o vencedor do jogo
 @param e Apontador para o estado
@@ -52,6 +54,7 @@ int jogar(ESTADO *e, COORDENADA c);
 int ganha_casa (ESTADO *e, COORDENADA c)
 */
 int ganha_casa (ESTADO *e, COORDENADA c);
+
 /**
 \brief Devolve o vencedor do jogo
 @param e Apontador para o estado
@@ -60,6 +63,7 @@ int ganha_casa (ESTADO *e, COORDENADA c);
 int ganha_invalido (ESTADO *e, COORDENADA c)
 */
 int ganha_invalido (ESTADO *e, COORDENADA c);
+
 /**
 \brief Devolve o vencedor do jogo
 @param e Apontador para o estado

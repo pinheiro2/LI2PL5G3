@@ -109,16 +109,26 @@ int get_num_comando (ESTADO *e);
 COORDENADA str_to_coord(char *s);
 
 /**
-\brief
+\brief Guarda a jogada realizada
 @param e Apontador para o estado
 @param j Jogada
 @param num_jog Numero de jogadas
 */
 void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
+/**
+\brief Altera o jogador atual
+@param e Apontador para o estado
+@param player Novo jogador atual
+*/
 void set_jogador_atual (ESTADO *e, int player);
 
+/**
+\brief Altera o estado atual para o estado inicial
+@param e Apontador para o estado
+*/
 void clean_estado(ESTADO *e);
+
 /**
 \brief Cria o estado inicial do jogo
  @returns Estado inicial do jogo
