@@ -184,13 +184,13 @@ int interpretador(ESTADO *e, int *quit) {
         if (cont == 3)
             printf ("Jogada Inválida\n");
         if (cont == 2) {
-            printf("Parabens jogador 2\n");
             mostrar_tabuleiro(e);
+            printf("\nParabens jogador 2\n");
             *quit = 1;
         }
         if (cont == 1) {
-            printf("Parabens jogador 1\n");
             mostrar_tabuleiro(e);
+            printf("\nParabens jogador 1\n");
             *quit = 1;
         }
         if (cont == 0)
