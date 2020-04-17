@@ -52,7 +52,7 @@ int ganha_invalido (ESTADO *e, COORDENADA c) {
     int p = get_jogador(e);
     for (i = -1; i < 2; i++)
         for (j = -1; j < 2; j++) {
-            if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + i > 0 && c.coluna + i < 9) {
+            if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + j > 0 && c.linha + j < 9) {
                 CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
                 if (h == VAZIO || h == UM || h == DOIS) {
                     return 0;
