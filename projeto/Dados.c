@@ -37,6 +37,12 @@ int get_num_jogadas (ESTADO *e){
     return r;
 }
 
+int get_max_jogadas (ESTADO *e) {
+    int r;
+    r = e -> max_jogadas;
+    return r;
+}
+
 int get_num_comando (ESTADO *e) {
     int r;
     r = e->num_comando;
@@ -77,6 +83,7 @@ void clean_estado(ESTADO *e){
 
 ESTADO *inicializar_estado() {
     ESTADO *e = (ESTADO *) calloc(1,sizeof(ESTADO));
+    e -> max_jogadas = 0;
     e -> jogador_atual = 1;
     e -> num_jogadas = 0;
     for (int i = 1; i <= 8; i++)

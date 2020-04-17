@@ -82,9 +82,13 @@ int jogar(ESTADO *e, COORDENADA c) {
 
         if (get_jogador(e) == 1) {
             e->num_jogadas++;
+            e -> max_jogadas = e -> num_jogadas;
             e->jogadas[(e->num_jogadas) - 1].jogador1 = c;
-        } else
+        }
+        else {
             e->jogadas[(e->num_jogadas) - 1].jogador2 = c;
+            e -> max_jogadas = e -> num_jogadas;
+        }
         if (r == 0)
             r = vencedor(e, c);
         troca_jogador(e);

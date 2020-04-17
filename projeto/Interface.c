@@ -105,6 +105,7 @@ void ler_ficheiro(ESTADO *e, char *nome) {
         else
             set_jogador_atual(e, 2);
         e->num_jogadas = num_jog;
+        e -> max_jogadas = e -> num_jogadas;
         fclose(fp);
         mostrar_tabuleiro(e);
     }
@@ -143,7 +144,7 @@ void mostrar_movs (ESTADO *e){
 void pos (ESTADO *e, int n){
     int i;
     int k = e->num_comando;
-    if (n < get_num_jogadas(e) && n >= 0) {
+    if (n < get_max_jogadas(e) && n >= 0) {
         clean_estado(e);
         for (i = 0; i < n; i++){
             if (i != n-1){
@@ -162,7 +163,7 @@ void pos (ESTADO *e, int n){
             set_casa(e, coord(5,5), PRETA);
     }
     else
-        printf("Impossível executar pos %d", n);
+        printf("Impossível executar pos %d\n", n);
 
 }
 

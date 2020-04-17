@@ -48,6 +48,7 @@ typedef struct {
     int num_comando;
     /** A coordenada da última jogada */
     COORDENADA ultima_jogada;
+    int max_jogadas;
 } ESTADO;
 
 /**
@@ -101,6 +102,7 @@ int get_num_jogadas (ESTADO *e);
 */
 int get_num_comando (ESTADO *e);
 
+int get_max_jogadas (ESTADO *e);
 /**
 \brief Tranforma uma string num array de int
 @param s A string
