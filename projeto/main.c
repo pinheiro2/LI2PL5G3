@@ -1,6 +1,7 @@
 #include "Dados.h"
 #include "Interface.h"
 #include "Logica.h"
+#include "listas_ligadas.h"
 #include <stdio.h>
 
 int main() {
