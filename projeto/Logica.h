@@ -73,4 +73,7 @@ int vencedor (ESTADO *e, COORDENADA c)
 */
 int vencedor (ESTADO *e, COORDENADA c);
 
+LISTA lista_cand(ESTADO *e, COORDENADA c);
+COORDENADA jog(ESTADO *e);
+
 #endif //PROJETO_LOGICA_H
