@@ -7,16 +7,9 @@ LISTA criar_lista(){
 
 LISTA insere_cabeca(LISTA L, void *valor){
     LISTA aux;
-    if (L == NULL) {
-        aux = (LISTA) malloc(sizeof(lista));
-        aux -> cabeca = valor;
-        aux -> cauda = NULL;
-    }
-    else{
-        aux = (LISTA) malloc(sizeof(lista));
-        aux -> cabeca = valor;
-        aux -> cauda = L;
-    }
+    aux = (LISTA) malloc(sizeof(lista));
+    aux -> cabeca = valor;
+    aux -> cauda = L;
     return aux;
 }
 
@@ -49,9 +42,10 @@ void limpar_lista (LISTA L){
 
 int conta_listas (LISTA L){
 	int n = 0;
-	if (L == NULL)
-		return 0;
-	else 
-		n = 1 + conta_listas (L->cauda);
-
+	LISTA aux = L;
+	while (aux != NULL) {
+        aux = remove_cabeca(aux);
+        n++;
+    }
+	return n;
 }

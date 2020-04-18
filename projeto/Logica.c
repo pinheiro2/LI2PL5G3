@@ -86,20 +86,19 @@ LISTA lista_cand(ESTADO *e, COORDENADA c){
                     L = insere_cabeca(L, &p);
                 }
             }
-                
+     return L;
 }
 
 COORDENADA jog(ESTADO *e){
-	srand(time(NULL));
+	srand (time (NULL));
 	COORDENADA c = e->ultima_jogada;
 	LISTA l = lista_cand (e,c);
 	int n = conta_listas (l);
 	int a = rand() % n;
 	for (int i = 0; i < a; i++)
-		remove_cabeca (l);
+		l = remove_cabeca (l);
     COORDENADA *end = (COORDENADA *) devolve_cabeca(l);
 	COORDENADA r = *end;
-	limpar_lista (l);
 	return r;
 }
 
