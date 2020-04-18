@@ -1,6 +1,7 @@
 
 #ifndef PROJETO_LOGICA_H
 #define PROJETO_LOGICA_H
+#include "listas_ligadas.h"
 
 /**
 \brief Dá-nos a informação se a coordenada jogada existe no tabuleiro

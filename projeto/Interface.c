@@ -203,6 +203,24 @@ int interpretador(ESTADO *e, int *quit) {
                 *quit = 1;
             if (strcmp(comando, "movs") == 0)
                 mostrar_movs(e);
+            if (strcmp(comando, "jog") == 0) {
+                COORDENADA b = jog(e);
+                int sf = jogar(e, b);
+                if (sf == 3)
+                    printf ("Jogada Inválida\n");
+                if (sf == 2) {
+                    mostrar_tabuleiro(e);
+                    printf("\nParabens jogador 2\n");
+                    *quit = 1;
+                }
+                if (sf == 1) {
+                    mostrar_tabuleiro(e);
+                    printf("\nParabens jogador 1\n");
+                    *quit = 1;
+                }
+                if (sf == 0)
+                    mostrar_tabuleiro(e);
+            }
         }
         if (sscanf(linha, "%s %s", comando, nomef) == 2) {
             if (strcmp(comando, "ler") == 0)

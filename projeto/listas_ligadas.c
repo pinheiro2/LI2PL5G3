@@ -49,7 +49,7 @@ void limpar_lista (LISTA L){
 
 int conta_listas (LISTA L){
 	int n = 0;
-	if (L = NULL)
+	if (L == NULL)
 		return 0;
 	else 
 		n = 1 + conta_listas (L->cauda);

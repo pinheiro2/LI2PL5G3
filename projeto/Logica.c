@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Logica.h"
+#include "listas_ligadas.h"
 #include <time.h>
 
 int check_tabuleiro (COORDENADA c) {
@@ -74,15 +75,16 @@ int vencedor (ESTADO *e, COORDENADA c){
 }
 
 LISTA lista_cand(ESTADO *e, COORDENADA c){
-
-	LISTA L = criar_lista();
+    LISTA L = criar_lista();
 	int i,j;
  	for (i = -1; i < 2; i++)
         for (j = -1; j < 2; j++) 
             if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + j > 0 && c.linha + j < 9) {
                 CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
-                if (h == VAZIO || h == UM || h == DOIS) 
-                    L = insere_cabeca(L, coord(c.coluna + i, c.linha + j));
+                if (h == VAZIO || h == UM || h == DOIS) {
+                    COORDENADA p = coord(c.coluna + i, c.linha + j);
+                    L = insere_cabeca(L, &p);
+                }
             }
                 
 }
@@ -93,9 +95,11 @@ COORDENADA jog(ESTADO *e){
 	LISTA l = lista_cand (e,c);
 	int n = conta_listas (l);
 	int a = rand() % n;
-	for (i = 0, i < a ,i++)
+	for (int i = 0; i < a; i++)
 		remove_cabeca (l);
-	COORDENADA r = l->cabeca;
+    COORDENADA *end = (COORDENADA *) devolve_cabeca(l);
+	COORDENADA r = *end;
+	limpar_lista (l);
 	return r;
 }
 
