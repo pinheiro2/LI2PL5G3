@@ -46,3 +46,12 @@ void limpar_lista (LISTA L){
     while (!lista_esta_vazia (L))
         L = remove_cabeca (L);
 }
+
+int conta_listas (LISTA L){
+	int n = 0;
+	if (L = NULL)
+		return 0;
+	else 
+		n = 1 + conta_listas (L->cauda);
+
+}
