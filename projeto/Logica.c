@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Logica.h"
+#include <time.h>
 
 int check_tabuleiro (COORDENADA c) {
     if (c.linha >= 1 && c.linha <= 8 && c.coluna >= 1 && c.coluna <= 8)
