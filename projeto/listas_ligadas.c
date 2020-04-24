@@ -1,5 +1,7 @@
 #include "listas_ligadas.h"
+#include "Dados.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 LISTA criar_lista(){
     return NULL;
@@ -28,6 +30,7 @@ LISTA remove_cabeca(LISTA L){
     free (L);
     return aux;
 }
+
 int lista_esta_vazia(LISTA L){
     if (L == NULL)
         return 1;
@@ -49,3 +52,4 @@ int conta_listas (LISTA L){
     }
 	return n;
 }
+

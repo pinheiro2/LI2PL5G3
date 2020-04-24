@@ -8,6 +8,13 @@ COORDENADA coord(int col, int lin) {
     return c;
 }
 
+COORDENADA *coord_copy(int col, int lin) {
+    COORDENADA *c = (COORDENADA*)malloc(sizeof(COORDENADA));
+    c -> coluna = col;
+    c -> linha = lin;
+    return c;
+}
+
 void set_casa(ESTADO *e, COORDENADA c, CASA V){
     e -> tab [(c.linha) - 1] [(c.coluna) - 1] = V;
 }

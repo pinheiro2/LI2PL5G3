@@ -59,6 +59,7 @@ typedef struct {
 */
 COORDENADA coord(int col, int lin);
 
+COORDENADA *coord_copy(int col, int lin);
 /**
 \brief Muda o valor de uma casa
 @param e Apontador para o estado

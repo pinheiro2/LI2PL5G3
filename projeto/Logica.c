@@ -82,8 +82,8 @@ LISTA lista_cand(ESTADO *e, COORDENADA c){
             if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + j > 0 && c.linha + j < 9) {
                 CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
                 if (h == VAZIO || h == UM || h == DOIS) {
-                    COORDENADA p = coord(c.coluna + i, c.linha + j);
-                    L = insere_cabeca(L, &p);
+                    COORDENADA *p = coord_copy(c.coluna + i, c.linha + j);
+                    L = insere_cabeca(L, p);
                 }
             }
      return L;
@@ -92,20 +92,23 @@ LISTA lista_cand(ESTADO *e, COORDENADA c){
 COORDENADA jog(ESTADO *e){
 	srand (time (NULL));
 	COORDENADA c = e->ultima_jogada;
-	LISTA l = lista_cand (e,c);
-	int n = conta_listas (l);
+	LISTA L = lista_cand (e,c);
+	int n = conta_listas (L);
 	int a = rand() % n;
-	for (int i = 0; i < a; i++)
-		l = remove_cabeca (l);
-    COORDENADA *end = (COORDENADA *) devolve_cabeca(l);
+
+	for (int i = 0; i < a; i++) {
+	    L = proximo(L);
+    }
+    COORDENADA *end = devolve_cabeca(L);
 	COORDENADA r = *end;
 	return r;
+
+    return c;
 }
-
-
 
 int jogar(ESTADO *e, COORDENADA c) {
     int r = 0;
+    printf("%d %d\n", c.linha, c.coluna);
     if (jogada_valida(e, c)) {
         r = vencedor(e,c);
         set_casa(e, e->ultima_jogada, PRETA);
