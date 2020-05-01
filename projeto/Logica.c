@@ -55,11 +55,13 @@ int ganha_invalido (ESTADO *e, COORDENADA c) {
     for (i = -1; i < 2; i++)
         for (j = -1; j < 2; j++) {
             if (c.coluna + i > 0 && c.coluna + i < 9 && c.linha + j > 0 && c.linha + j < 9) {
-                CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
-                if (h == VAZIO || h == UM || h == DOIS) {
-                    return 0;
-                } else
-                    r = p;
+                if (i != 0 || j != 0) {
+                    CASA h = get_casa(e, coord(c.coluna + i, c.linha + j));
+                    if (h == VAZIO || h == UM || h == DOIS) {
+                        return 0;
+                    } else
+                        r = p;
+                }
             }
         }
     return r;
@@ -118,20 +120,37 @@ COORDENADA jog(ESTADO *e){
 }
 
 COORDENADA jog2(ESTADO *e){
-    srand (time (NULL));
+    int d = 150;
+    COORDENADA r;
+    COORDENADA obj;
     COORDENADA c = e->ultima_jogada;
+    int p = get_jogador (e);
+    if (p == 1)
+        obj = coord (1,1);
+    else
+        obj = coord (8,8);
     LISTA L = lista_cand (e,c);
     int n = conta_listas (L);
-    int a = rand() % n;
-    for (int i = 0; i < a; i++) {
-        L = remove_cabeca(L);
+    for (int i = 0; i < n; i++){
+        COORDENADA *end = (COORDENADA *) devolve_cabeca(L);
+        COORDENADA t = *end;
+        if (ganha_invalido (e, t) != 0) {
+            limpar_lista (L);
+            return t;
+        }
+        else {
+            int dt = (abs(t.coluna - obj.coluna)) + (abs(t.linha - obj.linha))
+            if (d > dt) {
+                d = dt;
+                r = t;
+            }
+        }
+        L = remove_cabeca (L)
     }
-    COORDENADA *end = (COORDENADA *) devolve_cabeca(L);
-    COORDENADA r = *end;
     limpar_lista(L);
     return r;
 }
-
+*/
 int jogar(ESTADO *e, COORDENADA c) {
     int r = 0;
     if (jogada_valida(e, c)) {
