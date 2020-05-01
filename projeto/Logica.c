@@ -76,19 +76,6 @@ int vencedor (ESTADO *e, COORDENADA c){
     return v;
 }
 
-void percorre_lista (LISTA L) {
-    printf("\n==============================\n");
-    printf("=          PERCURSO          =\n");
-    printf("==============================\n\n");
-    // percorre sem remover os elementos da lista
-    for (LISTA T = L; !lista_esta_vazia(T); T = proximo(T)) {
-        // Vai buscar a cabeça da lista
-        // Passa do tipo genérico void * para char *
-        COORDENADA *str = (COORDENADA *) devolve_cabeca(T);
-        printf("%d, %d", str->linha, str->coluna);
-    }
-}
-
 LISTA lista_cand(ESTADO *e, COORDENADA c){
     LISTA L = criar_lista();
 	int i,j;
@@ -139,18 +126,18 @@ COORDENADA jog2(ESTADO *e){
             return t;
         }
         else {
-            int dt = (abs(t.coluna - obj.coluna)) + (abs(t.linha - obj.linha))
+            int dt = (abs(t.coluna - obj.coluna)) + (abs(t.linha - obj.linha));
             if (d > dt) {
                 d = dt;
                 r = t;
             }
         }
-        L = remove_cabeca (L)
+        L = remove_cabeca (L);
     }
     limpar_lista(L);
     return r;
 }
-*/
+
 int jogar(ESTADO *e, COORDENADA c) {
     int r = 0;
     if (jogada_valida(e, c)) {

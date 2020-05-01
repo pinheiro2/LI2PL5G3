@@ -221,6 +221,24 @@ int interpretador(ESTADO *e, int *quit) {
                 if (sf == 0)
                     mostrar_tabuleiro(e);
             }
+            if (strcmp(comando, "jog2") == 0) {
+                COORDENADA b = jog2(e);
+                int sf = jogar(e, b);
+                if (sf == 3)
+                    printf ("Jogada Inválida\n");
+                if (sf == 2) {
+                    mostrar_tabuleiro(e);
+                    printf("\nParabens jogador 2\n");
+                    *quit = 1;
+                }
+                if (sf == 1) {
+                    mostrar_tabuleiro(e);
+                    printf("\nParabens jogador 1\n");
+                    *quit = 1;
+                }
+                if (sf == 0)
+                    mostrar_tabuleiro(e);
+            }
         }
         if (sscanf(linha, "%s %s", comando, nomef) == 2) {
             if (strcmp(comando, "ler") == 0)

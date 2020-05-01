@@ -74,8 +74,8 @@ int vencedor (ESTADO *e, COORDENADA c)
 */
 int vencedor (ESTADO *e, COORDENADA c);
 
-void percorre_lista (LISTA L);
 LISTA lista_cand(ESTADO *e, COORDENADA c);
 COORDENADA jog(ESTADO *e);
+COORDENADA jog2(ESTADO *e);
 
 #endif //PROJETO_LOGICA_H
