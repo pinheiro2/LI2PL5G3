@@ -47,7 +47,7 @@ int conta_listas (LISTA L){
 	int n = 0;
 	LISTA aux = L;
 	while (aux != NULL) {
-        aux = remove_cabeca(aux);
+        aux = proximo(aux);
         n++;
     }
 	return n;

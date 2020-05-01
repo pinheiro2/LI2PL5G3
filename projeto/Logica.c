@@ -74,6 +74,19 @@ int vencedor (ESTADO *e, COORDENADA c){
     return v;
 }
 
+void percorre_lista (LISTA L) {
+    printf("\n==============================\n");
+    printf("=          PERCURSO          =\n");
+    printf("==============================\n\n");
+    // percorre sem remover os elementos da lista
+    for (LISTA T = L; !lista_esta_vazia(T); T = proximo(T)) {
+        // Vai buscar a cabeça da lista
+        // Passa do tipo genérico void * para char *
+        COORDENADA *str = (COORDENADA *) devolve_cabeca(T);
+        printf("%d, %d", str->linha, str->coluna);
+    }
+}
+
 LISTA lista_cand(ESTADO *e, COORDENADA c){
     LISTA L = criar_lista();
 	int i,j;
@@ -95,20 +108,32 @@ COORDENADA jog(ESTADO *e){
 	LISTA L = lista_cand (e,c);
 	int n = conta_listas (L);
 	int a = rand() % n;
-
 	for (int i = 0; i < a; i++) {
-	    L = proximo(L);
+	    L = remove_cabeca(L);
     }
-    COORDENADA *end = devolve_cabeca(L);
+    COORDENADA *end = (COORDENADA *) devolve_cabeca(L);
 	COORDENADA r = *end;
+	limpar_lista(L);
 	return r;
+}
 
-    return c;
+COORDENADA jog2(ESTADO *e){
+    srand (time (NULL));
+    COORDENADA c = e->ultima_jogada;
+    LISTA L = lista_cand (e,c);
+    int n = conta_listas (L);
+    int a = rand() % n;
+    for (int i = 0; i < a; i++) {
+        L = remove_cabeca(L);
+    }
+    COORDENADA *end = (COORDENADA *) devolve_cabeca(L);
+    COORDENADA r = *end;
+    limpar_lista(L);
+    return r;
 }
 
 int jogar(ESTADO *e, COORDENADA c) {
     int r = 0;
-    printf("%d %d\n", c.linha, c.coluna);
     if (jogada_valida(e, c)) {
         r = vencedor(e,c);
         set_casa(e, e->ultima_jogada, PRETA);
