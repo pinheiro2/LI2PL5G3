@@ -48,6 +48,7 @@ typedef struct {
     int num_comando;
     /** A coordenada da última jogada */
     COORDENADA ultima_jogada;
+    /** O número máximo da jogada a qual podemos aceder com o comando pos */
     int max_jogadas;
 } ESTADO;
 
@@ -59,7 +60,14 @@ typedef struct {
 */
 COORDENADA coord(int col, int lin);
 
+/**
+\brief Devolve o apontador de uma coordenada
+@param col O inteiro correspondente à coluna
+@param lin O inteiro correspondente à linha
+@returns Apontador de coordenada
+*/
 COORDENADA *coord_copy(int col, int lin);
+
 /**
 \brief Muda o valor de uma casa
 @param e Apontador para o estado
@@ -90,20 +98,26 @@ void troca_jogador (ESTADO *e);
 int get_jogador (ESTADO *e);
 
 /**
-\brief Devolve numero de jogadas
+\brief Devolve número de jogadas
 @param e Apontador para o estado
-@returns O numero de jogadas
+@returns O número de jogadas
 */
 int get_num_jogadas (ESTADO *e);
 
 /**
-\brief Devolve o numero de comandos
+\brief Devolve o número de comandos
 @param e Apontador para o estado
-@returns O numero de comandos
+@returns O número de comandos
 */
 int get_num_comando (ESTADO *e);
 
+/**
+\brief Devolve o número máximo da jogada a qual podemos aceder com o comando pos
+@param e Apontador para o estado
+@returns O número máximo da jogada a qual podemos aceder
+*/
 int get_max_jogadas (ESTADO *e);
+
 /**
 \brief Tranforma uma string num array de int
 @param s A string
@@ -115,7 +129,7 @@ COORDENADA str_to_coord(char *s);
 \brief Guarda a jogada realizada
 @param e Apontador para o estado
 @param j Jogada
-@param num_jog Numero de jogadas
+@param num_jog Número de jogadas
 */
 void armazenar_jogada(ESTADO *e, JOGADA j, int num_jog);
 
