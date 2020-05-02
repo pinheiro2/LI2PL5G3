@@ -12,14 +12,14 @@ void mostrar_tabuleiro(ESTADO *estado);
 /**
 \brief Grava o estado atual do jogo
 @param c Apontador para o estado
-@param nome a String
+@param nome O nome do ficheiro a guardar
 */
 void gr_ficheiro(ESTADO *e, char *nome);
 
 /**
 \brief Mostra o tabuleiro guardado
 @param c Apontador para o estado
-@param nome a String
+@param nome O nome do ficheiro a ler
 */
 void ler_ficheiro(ESTADO *e, char *nome);
 
@@ -36,16 +36,16 @@ void prompt(ESTADO *e);
 void mostrar_movs (ESTADO *e);
 
 /**
-\brief Permite voltar n jogas atras
+\brief Permite andar n jogadas consante o max_jogadas
 @param c Apontador para o estado
-@param n Numero de jogadas a voltar atras
+@param n Número de jogadas a andar, para frente ou para trás
 */
 void pos (ESTADO *e, int n);
 
 /**
-\brief Permite realizar todos as funçoes necessarias numa jogada
+\brief Permite realizar todos as funções necessárias numa jogada
 @param c Apontador para o estado
-@param quit Numero que determina se o jogo acaba ou continua, se quit == 0 o jogo continua, caso contrario o jogo acaba
+@param quit Apontador para o número que determina se o jogo acaba ou continua, se quit == 0 o jogo continua, caso quit == 1 o jogo acaba
 */
 int interpretador (ESTADO *e,int *quit);
 #endif //PROJETO_INTERFACE_H
