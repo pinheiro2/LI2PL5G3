@@ -1,3 +1,8 @@
+/**
+@file Dados.h
+Definição do estado e das funções que o manipulam
+*/
+
 #ifndef PROJETO_DADOS_H
 #define PROJETO_DADOS_H
 
@@ -148,7 +153,7 @@ void clean_estado(ESTADO *e);
 
 /**
 \brief Cria o estado inicial do jogo
- @returns Estado inicial do jogo
+@returns Estado inicial do jogo
 */
 ESTADO *inicializar_estado();
 

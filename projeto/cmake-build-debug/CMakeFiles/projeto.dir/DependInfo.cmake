@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/tiago/Projeto/LI2Pl5G3/projeto/Dados.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Dados.c.o"
   "/home/tiago/Projeto/LI2Pl5G3/projeto/Interface.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Interface.c.o"
   "/home/tiago/Projeto/LI2Pl5G3/projeto/Logica.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Logica.c.o"
+  "/home/tiago/Projeto/LI2Pl5G3/projeto/listas_ligadas.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/listas_ligadas.c.o"
   "/home/tiago/Projeto/LI2Pl5G3/projeto/main.c" "/home/tiago/Projeto/LI2Pl5G3/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
